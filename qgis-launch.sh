@@ -1,11 +1,11 @@
 #!/bin/bash
 
-USER_NAME=`basename $VHOME`
-HOME_NAME=`dirname $VHOME`
+USERNAME=`basename $VHOME`
+HOMENAME=`dirname $VHOME`
 
-USER_ID=`ls -lahn $HOME_NAME | grep $USER_NAME | awk {'print $3'}`
-GROUP_ID=`ls -lahn $HOME_NAME | grep $USER_NAME | awk {'print $4'}`
+USERID=`ls -lahn $HOMENAME | grep $USERNAME | awk {'print $3'}`
+GROUPID=`ls -lahn $HOMENAME | grep $USERNAME | awk {'print $4'}`
 
-groupadd -g $GROUP_ID qgis
-useradd --shell /bin/bash --uid $USER_ID --gid $GROUP_ID $USER_NAME
-su $USER_NAME -c "/usr/bin/qgis"
+groupadd -g $GROUPID qgis
+useradd --shell /bin/bash --uid $USERID --gid $GROUPID $USERNAME
+su $USERNAME -c "/usr/bin/qgis"
