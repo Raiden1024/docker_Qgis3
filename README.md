@@ -8,6 +8,7 @@ To use it:
 Create a script in /usr/bin or /usr/local/bin with the following content:
 
 #!/bin/sh
+
 username = \`basename $HOME\`
 
 docker run --rm \
