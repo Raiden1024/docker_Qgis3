@@ -9,7 +9,7 @@ Create a script in /usr/bin or /usr/local/bin with the following content:
 
 #!/bin/sh
 
-username = \`basename $HOME\`
+USERNAME = \`basename $HOME\`
 
 docker run --rm \
 -i -t \
